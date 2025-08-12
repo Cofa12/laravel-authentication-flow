@@ -8,21 +8,19 @@ class CredentialsHandling
 {
     public function validateCredentials(Request $request): array
     {
-        $credentials = ['password'=>'required|string|min:8|regex:/^(?=.*[a-z])(?=.*[A-Z])(?=.*[\W_]).{8,}$/'];
-        $criticalField = 'email';
-
-        if($request->has('phone')){
-            $credentials = ['phone'=>'required|phone:AUTO|exists:users,phone'];
-            $criticalField = 'phone';
+        foreach ($request->all() as $key => $value) {
+            if($key == 'name') {
+                $credentials['name'] = 'required|string';
+            }else if ($key == 'password') {
+                $credentials = ['password'=>'required|string|min:8|regex:/^(?=.*[a-z])(?=.*[A-Z])(?=.*[\W_]).{8,}$/'];
+            }else if ($key == 'email') {
+                $credentials['email'] = 'required|email|exists:users,email';
+            }
         }
-        else if($request->has('email')){
-            $credentials = ['email'=>'required|email|exists:users,email'];
-        }
-
 
         $request->validate($credentials);
 
-        return $request->only([$criticalField,'password']);
+        return $request->only(['email','password']);
 
     }
 }
