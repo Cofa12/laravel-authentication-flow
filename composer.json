@@ -1,0 +1,32 @@
+{
+    "name": "cofa/laravel-authentication-flow",
+    "description": "Simple authentication flow with validation and flexibility of credentials so you can use phone, email whatever you want .",
+    "type": "library",
+    "require": {
+        "tymon/jwt-auth": "^2.2",
+        "php": "^8.2",
+        "illuminate/support":"^12.22.1",
+        "illuminate/routing":"^12.22.1",
+        "propaganistas/laravel-phone": "^6.0",
+        "illuminate/auth": "^12.22"
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Cofa\\LaravelAuthenticationFlow\\ApiAuthServiceProvider"
+            ]
+        }
+    },
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Cofa\\LaravelAuthenticationFlow\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Mahmoud Gamal",
+            "email": "112869567+Cofa12@users.noreply.github.com"
+        }
+    ]
+}
