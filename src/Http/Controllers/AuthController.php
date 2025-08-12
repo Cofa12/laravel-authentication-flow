@@ -2,7 +2,6 @@
 
 namespace Cofa\LaravelAuthenticationFlow\Http\Controllers;
 
-use App\Services\V9\AuthenticatedUser;
 use Cofa\LaravelAuthenticationFlow\Exceptions\LoginFailedException;
 use Cofa\LaravelAuthenticationFlow\Http\Resources\AuthenticatedUser;
 use Cofa\LaravelAuthenticationFlow\Services\CredentialsHandling;

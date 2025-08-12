@@ -16,7 +16,7 @@ class CredentialsHandling
             $criticalField = 'phone';
         }
         else if($request->has('email')){
-            $credentials = ['email'=>'required|email,exists:users,email'];
+            $credentials = ['email'=>'required|email|exists:users,email'];
         }
 
 
