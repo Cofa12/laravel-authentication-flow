@@ -44,20 +44,6 @@ class AuthenticatedUser implements Arrayable
                 'id' => $this->user->id,
                 'name' => $this->user->name,
                 'email' => $this->user->email,
-                "emailVerified" => $this->user->email_verified ? true : false,
-                "roles" => ['customer'],
-                'documentStatus' => $this->user->documents[0]->identity_status ?? 'inActive',
-                'image' => $this->user->image,
-                'description' => $this->user->description,
-                'phones' => $this->user->phones->map(function ($phone) {
-                    return [
-                        'id' => $phone->id,
-                        'number' => $phone->phone,
-                        'verified' => $phone->is_verified ? true : false,
-                        'isPrimary' => $phone->is_primary ? true : false,
-                        'createdAt' => $phone->created_at,
-                    ];
-                }),
                 'createdAt' => $this->user->created_at,
                 'updatedAt' => $this->user->updated_at,
             ],
