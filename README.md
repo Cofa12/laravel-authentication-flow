@@ -130,7 +130,6 @@ All routes are prefixed with `/auth`:
 - `POST /auth/register` - Register a new user
 - `POST /auth/refresh-token` - Refresh access token
 - `POST /auth/logout` - Logout and invalidate tokens
-- `POST /auth/me` - Get authenticated user information
 
 ### Example Requests
 
