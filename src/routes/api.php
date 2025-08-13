@@ -9,5 +9,4 @@ Route::group(['prefix' => 'auth'], function () {
     Route::post('register', [AuthController::class, 'register']);
     Route::post('logout', [AuthController::class, 'logout']);
     Route::post('refresh-token', [AuthController::class, 'refreshToken']);
-    Route::post('me', [AuthController::class, 'me']);
 });
